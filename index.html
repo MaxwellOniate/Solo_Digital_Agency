@@ -74,38 +74,48 @@
 
     <!-- HOME -->
     <section id="home">
+
       <!-- Background Video -->
-      <video id="home-bg-video" poster="video/solo.jpg" autoplay loop muted>
-        <source src="video/solo.mp4" type="video/mp4" />
-        <source src="video/solo.ogv" type="video/ogg" />
-        <source src="video/solo.webm" type="video/webm" />
-      </video>
+      <div class="vid-wrap">
+        <video poster="video/solo.jpg" autoplay loop muted>
+          <source src="video/solo.mp4" type="video/mp4" />
+          <source src="video/solo.ogv" type="video/ogg" />
+          <source src="video/solo.webm" type="video/webm" />
+        </video>
+      </div>
+
+      <!-- Overlay -->
+      <div class="vid-overlay">
 
         <!-- Home Content -->
-        <header id="home-content" class="container">
-          <h1 class="home-heading">
-            Creative
-            <span class="d-block">
-              Digital <span class="text-solo">Agency</span>
-            </span>
-          </h1>
+        <div class="home-content container">
+           
+            <h1 class="home-heading">
+              Creative
+              <span class="d-block">
+                Digital <span class="text-solo">Agency</span>
+              </span>
+            </h1>
+      
+    
+            <p class="home-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vitae
+              iste exercitationem, perferendis iure harum.
+            </p>
+    
+            <a
+              href="#pricing"
+              title="Start Now"
+              role="button"
+              class="btn btn-general btn-home"
+              >Start Now</a
+            >
+            <!-- Down Arrow -->
+            <a href="#about" class="down-arrow"><i class="fa fa-angle-down"></i></a>
+        </div>
+      </div>
 
-          <p class="home-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vitae
-            iste exercitationem, perferendis iure harum.
-          </p>
 
-          <a
-            href="#pricing"
-            title="Start Now"
-            role="button"
-            class="btn btn-general btn-home"
-            >Start Now</a
-          >
-          <!-- Down Arrow -->
-          <a href="#about" id="down-arrow"><i class="fa fa-angle-down"></i></a>
-        </header>
-  
     </section>
     <!-- HOME END -->
 

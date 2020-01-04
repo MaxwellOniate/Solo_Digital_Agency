@@ -50,7 +50,7 @@ $('#main-nav a').on('click', function(e) {
   }
 });
 // Add smooth scrolling
-$('#main-nav a, #home-content a').on('click', function(e) {
+$('#main-nav a, .home-content a').on('click', function(e) {
   // Check for a hash value.
   if (this.hash !== '') {
     // Prevent default behaviors.

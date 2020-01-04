@@ -151,7 +151,8 @@ nav {
     nav #main-nav ul li a:hover {
       color: #f4c613; }
   nav #main-nav a.active {
-    color: #f4c613; }
+    color: #f4c613;
+    font-weight: 700; }
 
 .white-nav {
   background: #fff;
@@ -162,21 +163,27 @@ nav {
     color: #212226; }
 
 #home {
-  background: rgba(0, 0, 0, 0.7);
+  background: none;
   height: 100vh; }
-  #home-bg-video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-    background: url("../video/solo.jpg") no-repeat center center/cover; }
-  #home-content {
+  #home .vid-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; }
+    #home .vid-wrap video {
+      min-width: 100%;
+      min-height: 100%;
+      background: url("../video/solo.jpg") no-repeat center center/cover; }
+  #home .vid-overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8); }
+  #home .home-content {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -184,23 +191,23 @@ nav {
     align-items: center;
     text-align: center;
     color: #fff; }
-    #home-content .home-heading {
+    #home .home-content .home-heading {
       font-size: 4rem;
       font-weight: 100;
       text-transform: uppercase;
       margin: 0; }
-      #home-content .home-heading .text-solo {
+      #home .home-content .home-heading .text-solo {
         font-weight: 500; }
-    #home-content .home-text {
+    #home .home-content .home-text {
       font-size: 1rem;
       font-weight: 100; }
-    #home-content #down-arrow {
+    #home .home-content .down-arrow {
       font-size: 3rem;
       color: #fff;
       position: absolute;
       bottom: 20px;
       transition: all 500ms; }
-      #home-content #down-arrow:hover {
+      #home .home-content .down-arrow:hover {
         transform: scale(1.1);
         color: #f4c613; }
 
@@ -681,14 +688,14 @@ nav {
       color: #212226; } }
 
 @media (max-height: 420px), (max-width: 420px) {
-  #home .home-heading {
+  #home .home-content .home-heading {
     font-size: 2.5rem; }
-  #home .home-text {
+  #home .home-content .home-text {
     font-size: 0.8rem; }
-  #home .btn-home {
+  #home .home-content .btn-home {
     font-size: 0.6rem;
     margin: 0; }
-  #home #down-arrow {
+  #home .home-content .down-arrow {
     display: none; } }
 
 @media (max-width: 420px) {
@@ -703,9 +710,9 @@ nav {
     margin-right: 1.4rem !important; } }
 
 @media (max-width: 320px) {
-  #home .home-heading {
+  #home .home-content .home-heading {
     font-size: 2rem; }
-  #home .home-text {
+  #home .home-content .home-text {
     font-size: 0.7rem; }
   #service-tabs .nav-tabs .nav-item .nav-link {
     font-size: 0.61rem; }
