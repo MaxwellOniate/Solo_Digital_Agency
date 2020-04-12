@@ -1,16 +1,14 @@
 // Remove preloader once page is fully loaded.
-$(window).on('load', function() {
+$(window).on('load', function () {
   $('#status').fadeOut();
-  $('#preloader')
-    .delay(350)
-    .fadeOut('slow');
+  $('#preloader').delay(350).fadeOut('slow');
 });
 
 // Show & Hide White Navigation Bar
-$(function() {
+$(function () {
   showHideNav();
 
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     showHideNav();
   });
 
@@ -33,7 +31,7 @@ $(function() {
 $('body').scrollspy({ target: '.navbar' });
 
 // Add smooth scrolling
-$('#main-nav a').on('click', function(e) {
+$('#main-nav a').on('click', function (e) {
   // Check for a hash value.
   if (this.hash !== '') {
     // Prevent default behaviors.
@@ -43,14 +41,14 @@ $('#main-nav a').on('click', function(e) {
     // Animate smooth scroll.
     $('html, body').animate(
       {
-        scrollTop: $(hash).offset().top
+        scrollTop: $(hash).offset().top,
       },
       900
     );
   }
 });
 // Add smooth scrolling
-$('#main-nav a, .home-content a').on('click', function(e) {
+$('#main-nav a, .home-content a').on('click', function (e) {
   // Check for a hash value.
   if (this.hash !== '') {
     // Prevent default behaviors.
@@ -60,7 +58,7 @@ $('#main-nav a, .home-content a').on('click', function(e) {
     // Animate smooth scroll.
     $('html, body').animate(
       {
-        scrollTop: $(hash).offset().top
+        scrollTop: $(hash).offset().top,
       },
       900
     );
@@ -68,7 +66,7 @@ $('#main-nav a, .home-content a').on('click', function(e) {
 });
 
 // Team Owl Carousel Slider
-$(function() {
+$(function () {
   $('#team-members').owlCarousel({
     items: 2,
     autoplay: true,
@@ -76,18 +74,18 @@ $(function() {
     loop: true,
     autoplayHoverPause: true,
     nav: true,
-    dots: false
+    dots: false,
   });
 });
 
 // Team Progress Bars
-$(function() {
+$(function () {
   $('#progress-bars').waypoint(
-    function() {
-      $('.progress-bar').each(function() {
+    function () {
+      $('.progress-bar').each(function () {
         $(this).animate(
           {
-            width: $(this).attr('aria-valuenow') + '%'
+            width: $(this).attr('aria-valuenow') + '%',
           },
           2000
         );
@@ -99,38 +97,36 @@ $(function() {
 });
 
 // Portfolio Filter
-$(window).on('load', function() {
+$(window).on('load', function () {
   // Init Isotope
   $('#isotope-container').isotope({});
   // Filter items on button click
-  $('#isotope-filters').on('click', 'button', function() {
+  $('#isotope-filters').on('click', 'button', function () {
     // Get filter value
     const filterValue = $(this).attr('data-filter');
     // Filter portfolio items
     $('#isotope-container').isotope({
-      filter: filterValue
+      filter: filterValue,
     });
     // Active button
-    $('#isotope-filters')
-      .find('.active')
-      .removeClass('active');
+    $('#isotope-filters').find('.active').removeClass('active');
     $(this).addClass('active');
   });
 });
 
 // Magnific Popup
-$(function() {
+$(function () {
   $('#isotope-container').magnificPopup({
     delegate: 'a',
     type: 'image',
     gallery: {
-      enabled: true
-    }
+      enabled: true,
+    },
   });
 });
 
 // Testimonial Slider
-$(function() {
+$(function () {
   $('#testimonial-slider').owlCarousel({
     items: 1,
     autoplay: true,
@@ -138,22 +134,22 @@ $(function() {
     loop: true,
     autoplayHoverPause: true,
     nav: true,
-    dots: false
+    dots: false,
   });
 });
 
 // Stats Count Up
 
-$(function() {
+$(function () {
   $('.counter').counterUp({
     delay: 10,
-    time: 2000
+    time: 2000,
   });
 });
 
 // Clients
 
-$(function() {
+$(function () {
   $('#client-list').owlCarousel({
     items: 6,
     autoplay: false,
@@ -161,37 +157,6 @@ $(function() {
     loop: true,
     autoplayHoverPause: true,
     nav: true,
-    dots: false
-  });
-});
-
-// Google Map
-
-$(window).on('load', function() {
-  // Map Variables
-  const addressString = '230 Broadway, NY, New York 10007, USA';
-  const myLatLng = { lat: 40.712685, lng: -74.00592 };
-
-  // Render Map
-  let map = new google.maps.Map(document.getElementById('map'), {
-    center: myLatLng,
-    zoom: 11
-  });
-
-  // Add Marker
-  const marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Click To See Address'
-  });
-
-  // Add Info Window
-  const infoWindow = new google.maps.InfoWindow({
-    content: addressString
-  });
-
-  // Show info window on marker click
-  marker.addListener('click', function() {
-    infoWindow.open(map, marker);
+    dots: false,
   });
 });
